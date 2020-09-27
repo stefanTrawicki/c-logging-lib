@@ -20,9 +20,9 @@
 
 #define printf(x, ...)                                   \
     {                                                    \
-        fprintf(stderr, "%s:%d:  ", __FILE__, __LINE__); \
-        fprintf(stderr, x, __VA_ARGS__);                 \
-        fprintf(stderr, "\n");                           \
+        fprintf(stdout, "%s:%d:  ", __FILE__, __LINE__); \
+        fprintf(stdout, x, __VA_ARGS__);                 \
+        fprintf(stdout, "\n");                           \
     }
 
 void *calloc_wrapper(size_t count, size_t size, const char *file, int line);
