@@ -20,7 +20,8 @@ clang test.c -o test -llogging
 
 int main(int argc, char **argv)
 {
-    stderr_set("main.log");
+    stderr_set("mem.log");
+    stdout_set("out.log);
     printf("%s %d", "hello, world!", 5);
 
     int *x = malloc(sizeof(int));
@@ -36,12 +37,16 @@ int main(int argc, char **argv)
 ```
 
 ## Output
-in main.log:
+in mem.log:
 ```log
-test.c:6:  hello, world! 5
 test.c:8: malloc 0x7f85fbc05840 4B
 test.c:10: malloc 0x7f85fbc05850 4B
 test.c:11:  realloc 0x7f85fbc05850 -> 0x7f85fbc05850 8B
 test.c:13:  free 0x7f85fbc05840
 test.c:14:  free 0x7f85fbc05850
 ```
+
+int out.log:
+'''log
+test.c:6:  hello, world! 5
+'''
