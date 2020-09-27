@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 {
     stderr_set("mem.log");
     stdout_set("out.log);
-    printf("%s %d", "hello, world!", 5);
+    printf("hello, world! %d", 5);
 
     int *x = malloc(sizeof(int));
 
@@ -46,7 +46,7 @@ test.c:13:  free 0x7f85fbc05840
 test.c:14:  free 0x7f85fbc05850
 ```
 
-int out.log:
-'''log
+in out.log:
+```log
 test.c:6:  hello, world! 5
-'''
+```
